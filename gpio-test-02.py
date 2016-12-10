@@ -1,13 +1,10 @@
 #!/usr/bin/env python
 
+"""Example on how to use RotaryEncoder lib"""
 
 from pprint import pprint
 import time
 from rotaryencoder import RotaryEncoder
-from datetime import datetime
-dt = datetime.now()
-print dt.microsecond - 1.3
-print time.time()
 
 
 # physical pin numbers
@@ -60,8 +57,11 @@ def main(encoder):
             if time.time() - ts >= crank_delay:
                 # timeout value reached, stop playback
                 break
+
     print '3 sec pause detected'
+
     # put playback stop code here
+    print 'playback stopped'
 
     # this will start the loop over
     main(encoder)
